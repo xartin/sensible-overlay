@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+	<email>mcrawford@eliteitminds.com</email>
+	<name>Michael Crawford</name>
+	<description>Primary maintainer</description>
+</maintainer>
+<longdescription>Policy-driven snapshot management and replication tools for ZFS</longdescription>
+	<upstream>
+		<remote-id type="github">jimsalterjrs/sanoid</remote-id>
+		<bugs-to>https://github.com/jimsalterjrs/sanoid/issues</bugs-to>
+	</upstream>
+</pkgmetadata>

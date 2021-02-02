@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<repositories version="1.0">
+    <repo quality="experimental" status="unofficial">
+      <name>sensible-overlay</name>
+      <description lang="en">Gentoo Linux Overlay providing a sensible minimal overlay for general applications.</description>
+      <homepage>https://github.com/xartin/sensible-overlay</homepage>
+      <owner type="person">
+        <email>mcrawford@eliteitminds.com</email>
+        <name>Michael Crawford</name>
+      </owner>
+      <source type="git">https://github.com/xartin/sensible-overlay.git</source>
+      <source type="git">git+ssh://git@github.com/xartin/sensible-overlay.git</source>
+      <feed>https://github.com/xartin/sensible-overlay/commits/master.atom</feed>
+    </repo>
+</repositories>
