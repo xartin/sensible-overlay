@@ -24,7 +24,7 @@ RDEPEND="sys-fs/zfs
 	dev-perl/Sort-Versions
 	dev-perl/boolean
 "
-
+MY_PN=zfsbootmenu
 S="${WORKDIR}/${MY_PN}"
 
 src_install() {
