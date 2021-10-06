@@ -8,10 +8,11 @@ inherit optfeature
 DESCRIPTION="ZFS Bootloader for root-on-ZFS systems"
 HOMEPAGE="https://github.com/zbm-dev/zfsbootmenu"
 SRC_URI="https://github.com/zbm-dev/${PN}/releases/download/v${PV}/${PN}-x86_64-v${PV}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="~amd64"
 
 LICENSE="MIT"
 SLOT="0"
+KEYWORDS="~amd64"
+RESTRICT="bindist strip test"
 
 RDEPEND="sys-fs/zfs
 	sys-kernel/dracut
@@ -23,6 +24,8 @@ RDEPEND="sys-fs/zfs
 	dev-perl/Sort-Versions
 	dev-perl/boolean
 "
+
+S="${WORKDIR}/${MY_PN}"
 
 src_install() {
 	default
