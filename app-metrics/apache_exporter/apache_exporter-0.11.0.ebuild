@@ -21,7 +21,7 @@ DEPEND=">=dev-lang/go-1.12
 RDEPEND="acct-user/apache_exporter"
 
 MY_PN=apache_exporter
-S="${WORKDIR}/${MY_PN}"
+S="${WORKDIR}/${PN}-${PV}"
 
 src_install() {
 	dobin apache_exporter/apache_exporter
