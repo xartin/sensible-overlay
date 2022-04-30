@@ -5,7 +5,7 @@ EAPI=8
 inherit systemd
 
 
-SRC_URI="https://github.com/Lusitaniae/apache_exporter/releases/download/v${PV}/apache_exporter-${PV}.linux-amd64.tar.gz"
+SRC_URI="https://github.com/Lusitaniae/apache_exporter/releases/download/v${PV}/apache_exporter-${PV}.linux-amd64.tar.gz -> ${P}.tar.gz"
 
 KEYWORDS="~amd64"
 DESCRIPTION="Prometheus exporter for apache metrics"
