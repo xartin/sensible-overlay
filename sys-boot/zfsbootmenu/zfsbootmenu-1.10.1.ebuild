@@ -3,8 +3,6 @@
 
 EAPI=7
 
-inherit optfeature
-
 DESCRIPTION="ZFS Bootloader for root-on-ZFS systems"
 HOMEPAGE="https://github.com/zbm-dev/zfsbootmenu"
 SRC_URI="https://github.com/zbm-dev/${PN}/releases/download/v${PV}/${PN}-x86_64-v${PV}.tar.gz -> ${P}.tar.gz"
@@ -31,10 +29,8 @@ src_install() {
 
 	insinto /etc/zfsbootmenu
 	newins "${FILESDIR}"/config.yaml config.yaml
-}
 
-pkg_postinst() {
-	optfeature \
-		"creating a unified EFI executable (which bundles the kernel, initramfs and command line)" \
-		sys-boot/systemd-boot
+	insinto /boot
+	newins "${WORKDIR}/${PN}-x86_64-v${PV}/initramfs-bootmenu.img initramfs-bootmenu.img
+	newins "${WORKDIR}/${PN}-x86_64-v${PV}/vmlinuz-bootmenu vmlinuz-bootmenu
 }

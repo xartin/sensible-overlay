@@ -1,6 +1,6 @@
 # Gentoo Linux Overlay providing a sensible minimal overlay for general applications.
 
-Current as of 05/10/2021
+Current as of 30/04/2022
 
 Maintainer: xartin / ali3nx
 * (https://github.com/xartin)
