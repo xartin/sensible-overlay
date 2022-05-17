@@ -29,7 +29,6 @@ src_install() {
 	systemd_dounit "${FILESDIR}/${PN}.service"
 	insinto /etc/sysconfig
 	newins "${FILESDIR}/sysconfig.apache_exporter" apache_exporter
-	popd || die
 	keepdir /var/log/apache_exporter
 	fowners apache_exporter:apache_exporter /var/log/apache_exporter
 	newinitd "${FILESDIR}"/${PN}.initd ${PN}
