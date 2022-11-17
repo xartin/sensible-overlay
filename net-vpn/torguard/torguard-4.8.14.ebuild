@@ -15,10 +15,14 @@ SLOT="0"
 # KEYWORDS="~amd64 ~x86"
 KEYWORDS="~amd64"
 IUSE="sudo"
-RDEPEND="sys-apps/iproute2
+RDEPEND="acct-usr/torguard
+		acct-group/torguard
+		sys-apps/iproute2
 		net-vpn/openvpn[iproute2]
 		net-vpn/wireguard-tools[wg-quick]
+		net-misc/stunnel
 		dev-qt/qtwidgets
+		sys-process/psmisc
 		dev-qt/qtnetwork[libproxy]
 		net-proxy/shadowsocks-libev
 		sudo? ( lxqt-base/lxqt-sudo )"
