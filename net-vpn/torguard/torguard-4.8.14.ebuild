@@ -15,7 +15,7 @@ SLOT="0"
 # KEYWORDS="~amd64 ~x86"
 KEYWORDS="~amd64"
 IUSE="sudo"
-RDEPEND="acct-usr/torguard
+RDEPEND="acct-user/torguard
 		acct-group/torguard
 		sys-apps/iproute2
 		net-vpn/openvpn[iproute2]
