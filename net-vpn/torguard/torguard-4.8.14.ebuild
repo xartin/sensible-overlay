@@ -38,7 +38,7 @@ src_unpack() {
 	cd "${WORKDIR}/${PN}-v${PV}-amd64-arch" || die "Couldn't cd into the source directory ${S}"
 	# TODO: fix x86 installation :(
 	# tar xpf ${PN}-v${PV}-amd64-arch.tar.gz || die "tar failed"
-	unpack ./${PN}-v${PV}-amd64-arch.tar.gz || die "tar failed"
+	unpack ./${PN}-v${PV}-amd64-arch.tar || die "tar failed"
 }
 
 src_prepare() {
