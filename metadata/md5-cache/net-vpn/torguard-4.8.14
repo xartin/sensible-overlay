@@ -1,0 +1,14 @@
+DEFINED_PHASES=install prepare unpack
+DEPEND=sys-apps/iproute2 net-vpn/openvpn[iproute2] net-vpn/wireguard-tools[wg-quick] dev-qt/qtwidgets dev-qt/qtnetwork[libproxy] net-proxy/shadowsocks-libev sudo? ( lxqt-base/lxqt-sudo )
+DESCRIPTION=torguard anonymous VPN - NOT related to TOR project
+EAPI=8
+HOMEPAGE=https://torguard.net
+INHERIT=toolchain-funcs
+IUSE=sudo
+KEYWORDS=~amd64
+LICENSE=custom
+RDEPEND=sys-apps/iproute2 net-vpn/openvpn[iproute2] net-vpn/wireguard-tools[wg-quick] dev-qt/qtwidgets dev-qt/qtnetwork[libproxy] net-proxy/shadowsocks-libev sudo? ( lxqt-base/lxqt-sudo )
+SLOT=0
+SRC_URI=https://updates.torguard.biz/Software/Linux/torguard-v4.8.14-amd64-arch.tar.gz -> torguard-4.8.14.tar.gz x86? ( https://updates.torguard.biz/Software/Linux/torguard-v4.8.14-i386-arch.tar.gz -> torguard-4.8.14.tar.gz )
+_eclasses_=toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	multilib	5ca4e49abed8e3a2f7b56920eadee157
+_md5_=4710ef5967c2f88f6fcfca6d2526e790

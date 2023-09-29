@@ -3,17 +3,20 @@
 
 EAPI=8
 
-inherit toolchain-funcs
+inherit toolchain-funcs unpacker
 
 DESCRIPTION="torguard anonymous VPN - NOT related to TOR project"
 HOMEPAGE="https://torguard.net"
 SRC_URI="https://updates.torguard.biz/Software/Linux/torguard-v${PV}-amd64-arch.tar.gz -> ${P}.tar.gz
 		x86?	( https://updates.torguard.biz/Software/Linux/torguard-v${PV}-i386-arch.tar.gz -> ${P}.tar.gz )"
 
+#BUILD="build.206.2+gb3ec8fb"
+#_FULL_VERSION="${PV}-${BUILD}"
+
 LICENSE="custom"
 SLOT="0"
-# KEYWORDS="~amd64 ~x86"
 KEYWORDS="~amd64"
+RESTRICT="mirror bindist"
 IUSE="sudo"
 RDEPEND="acct-user/torguard
 		acct-group/torguard
@@ -26,20 +29,12 @@ RDEPEND="acct-user/torguard
 		dev-qt/qtnetwork[libproxy]
 		net-proxy/shadowsocks-libev
 		sudo? ( lxqt-base/lxqt-sudo )"
+
 DEPEND="${RDEPEND}"
 
 # S=${WORKDIR}/${PN}-v${PV}-amd64-arch
 S="${WORKDIR}/${PN}-v${PV}-amd64-arch/${PN}-v${PV}-amd64-arch"
 # S=${WORKDIR}/${PN}-v${PV}-amd64-arch
-
-src_unpack() {
-	default
-	# cd "${S}" || die "Couldn't cd into the source directory ${S}"
-	cd "${WORKDIR}/${PN}-v${PV}-amd64-arch" || die "Couldn't cd into the source directory ${S}"
-	# TODO: fix x86 installation :(
-	# tar xpf ${PN}-v${PV}-amd64-arch.tar.gz || die "tar failed"
-	unpack ./${PN}-v${PV}-amd64-arch.tar || die "tar failed"
-}
 
 src_prepare() {
 	default
@@ -48,17 +43,11 @@ src_prepare() {
 }
 
 src_install() {
-	doins -r "${S}/usr"
-	newbin "${S}/opt/${PN}/bin/${PN}-wrapper" "${PN}"
-
+        # Create default library folder with correct permissions
+        keepdir /opt/torguard
+        fowners torguard:torguard /opt/torguard
 	insinto /opt/${PN}/bin/
-	insopts -m755
-	dostrip -x "${EROOT}/opt/${PN}/bin/${PN}" "${EROOT}/opt/${PN}/bin/openconnect"
-	doins -r "${S}/opt/${PN}/bin/${PN}"
-	doins "${S}/opt/${PN}/bin/openconnect"
-	doins "${S}/opt/${PN}/bin/vpnc-script"
-
-	# torguard sysusers conf
+	
 	insinto /usr/lib/sysusers.d
 	newins "${FILESDIR}/${PN}.sysusers" "${PN}.conf"
 
