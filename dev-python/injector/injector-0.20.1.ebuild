@@ -11,7 +11,7 @@ HOMEPAGE="
 		https://pypi.org/project/injector/
 		https://github.com/alecthomas/injector
 "
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/python-injector/${PN}/archive/refs/tags/${PV}.tar.gz"
 
 KEYWORDS="~amd64"
 LICENSE="BSD"
