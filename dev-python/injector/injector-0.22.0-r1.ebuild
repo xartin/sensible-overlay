@@ -3,10 +3,9 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=hatchling
-PYTHON_COMPAT=( pypy3_11 python3_{11..14} )
-
-inherit distutils-r1 optfeature
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{11..14} pypy3_11 )
+inherit distutils-r1
 
 DESCRIPTION="Python dependency injection framework"
 HOMEPAGE="
